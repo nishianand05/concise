@@ -13,3 +13,4 @@ mongoose.connect(process.env.DB_URL, {
 .catch(() => console.log("Error in connecting database!"))
 
 module.exports.User = require("./user");
+module.exports.Message = require("./message");

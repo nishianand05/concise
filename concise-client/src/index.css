@@ -1,0 +1,37 @@
+body {
+	margin: 0;
+	background-color: #f5f3f4;
+}
+
+/* NAVBAR */
+
+.navbar {
+	margin-bottom: 1rem;
+	color: #f5f3f4;
+}
+
+.navbar a {	
+	font-weight: lighter;
+	text-decoration: none;
+	color: #f5f3f4;
+	opacity: 0.85;
+}
+
+.navbar a:hover {
+	cursor: pointer;
+	opacity: 1;
+}
+
+.navbar-brand > img {
+	display: inline-block;
+	width: 180px;
+	margin: 0.5rem 0;
+}
+
+.navbar-nav li {
+	margin: 0 0.5rem;
+}
+
+.onboarding > .navbar {
+	background-color: #1b263b;
+}

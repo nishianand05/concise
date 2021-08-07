@@ -35,3 +35,41 @@ body {
 .onboarding > .navbar {
 	background-color: #1b263b;
 }
+
+/* Homepage */
+
+.home-hero {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: -1;
+	text-align: center;
+	padding: 1rem;
+	background-color: rgba(0,0,0,0.7);
+		color: white;
+	text-shadow: 0 0 8px rgba(0,0,0,0.9);
+}
+
+.home-hero h1,.home-hero h4 {
+	margin: 10px;
+}
+
+.home-hero a {
+	margin: 30px;
+}
+
+#myHomeVideo {
+	z-index: -2;
+	object-fit: cover;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+}

@@ -5,7 +5,7 @@ import UserAside from './UserAside';
 
 const MessageTimeline = props => {
 	return (
-		<div className="row">
+		<div className="row justify-content-around my-5">
 			<UserAside 
 				profileImageUrl={props.profileImageUrl}
 				username={props.username}

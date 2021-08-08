@@ -24,8 +24,8 @@ class MessageList extends Component {
 		));
 		
 		return (
-			<div className="row col-sm-8">
-				<div className="offset-1 col-sm-10">
+			<div className="row col-sm">
+				<div className="col-sm">
 					<ul className="list-group" id="messages">
 						{messageList}
 					</ul>

@@ -37,7 +37,6 @@ class AuthForm extends Component {
 		const {
 			email, 
 			username, 
-			password, 
 			profileImageUrl
 		} = this.state;
 		
@@ -56,10 +55,10 @@ class AuthForm extends Component {
 		
 		return(
 			<div>
-				<div className="row justify-content-md-center text-center">
+				<div className="row justify-content-md-center text-center my-4">
 					<div className="col-md-6">
 						<form onSubmit={this.handleSubmit}>
-							<h2>{heading}</h2>
+							<h2 className="my-5">{heading}</h2>
 							{
 								errors.message && (
 									<div className="alert alert-danger">
@@ -67,9 +66,10 @@ class AuthForm extends Component {
 									</div>
 								)
 							}
-							<label htmlFor="email">Email: </label>
+							
 							<input
 								className="form-control"
+								placeholder="Email"
 								id="email"
 								name="email"
 								onChange={this.handleChange}
@@ -77,9 +77,9 @@ class AuthForm extends Component {
 								type="text"
 								/>
 							
-							<label htmlFor="password">Password: </label>
 							<input
 								className="form-control"
+								placeholder="Password"
 								id="password"
 								name="password"
 								onChange={this.handleChange}
@@ -87,13 +87,12 @@ class AuthForm extends Component {
 								/>
 							
 							
-							
 							{
 								signUp && (
 									<div>
-										<label htmlFor="username">Username: </label>
 										<input
 											className="form-control"
+											placeholder="Username"
 											id="username"
 											name="username"
 											onChange={this.handleChange}
@@ -101,9 +100,9 @@ class AuthForm extends Component {
 											type="text"
 											/>
 
-										<label htmlFor="profileImageUrl">Profile Image URL: </label>
 										<input
 											className="form-control"
+											placeholder="Profile Image URL"
 											id="profileImageUrl"
 											name="profileImageUrl"
 											onChange={this.handleChange}
@@ -116,7 +115,7 @@ class AuthForm extends Component {
 							
 							<button 
 								type="submit"
-								className="btn btn-primary btn-block btn-lg">
+								className="btn btn-info btn-block btn-lg my-3">
 								{buttonText}
 							</button>
 						</form>

@@ -8,7 +8,7 @@ body {
 .navbar {
 	margin-bottom: 1rem;
 	color: #f5f3f4;
-	box-shadow: 0 0 20px 5px rgb(0 0 0 / 70%);
+	box-shadow: 0 0 20px 5px rgb(0, 0, 0, 0.5);
 }
 
 .navbar a {	
@@ -53,7 +53,7 @@ body {
 	text-align: center;
 	padding: 1rem;
 	background-color: rgba(0,0,0,0.7);
-		color: white;
+	color: white;
 	text-shadow: 0 0 8px rgba(0,0,0,0.9);
 }
 
@@ -73,6 +73,14 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
+	background-color: black;
+}
+
+
+/* Forms */
+
+.form-control {
+	margin: 20px 0;
 }
 
 /* Messages */
@@ -80,7 +88,7 @@ body {
 #messages .list-group-item {
 	display: flex;
 	align-items: flex-start;
-	padding: 7px 20px 12px;
+	padding: 20px 12px;
 }
 
 #messages:not(.no-hover) .list-group-item:hover{

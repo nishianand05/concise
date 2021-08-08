@@ -6,7 +6,7 @@ import DefaultProfileImg from '../images/default-user.svg';
 
 const MessageItem = ({date, profileImageUrl, text, username, removeMessage, isCorrectUser}) => (
 	<div>
-		<li className="list-group-item">
+		<li className="list-group-item mb-2">
 			<img 
 				src={profileImageUrl || DefaultProfileImg} 
 				alt={username} 
@@ -28,6 +28,7 @@ const MessageItem = ({date, profileImageUrl, text, username, removeMessage, isCo
 				
 				{ isCorrectUser && (
 					<a 
+						href
 						className="btn btn-danger" 
 						onClick={removeMessage}>
 						Delete

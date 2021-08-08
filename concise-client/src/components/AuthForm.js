@@ -22,7 +22,8 @@ class AuthForm extends Component {
 	handleSubmit = e => {
 		e.preventDefault();
 		const authType = this.props.signUp ? "signup" : "signin";
-		this.props.onAuth(authType, this.state)
+		this.props
+			.onAuth(authType, this.state)
 			.then(() => {
 			this.props.history.push("/");
 		})
@@ -33,8 +34,21 @@ class AuthForm extends Component {
 	
 	render(){
 		
-		const {email, username, password, profileImageUrl} = this.state;
-		const {heading, buttonText, signUp, errors, removeError, history} = this.props;
+		const {
+			email, 
+			username, 
+			password, 
+			profileImageUrl
+		} = this.state;
+		
+		const {
+			heading, 
+			buttonText, 
+			signUp, 
+			errors, 
+			removeError, 
+			history
+		} = this.props;
 		
 		history.listen(() => {
 			removeError();
@@ -47,9 +61,11 @@ class AuthForm extends Component {
 						<form onSubmit={this.handleSubmit}>
 							<h2>{heading}</h2>
 							{
-								errors.message && <div className="alert alert-danger">
+								errors.message && (
+									<div className="alert alert-danger">
 										{errors.message}
 									</div>
+								)
 							}
 							<label htmlFor="email">Email: </label>
 							<input
@@ -92,7 +108,7 @@ class AuthForm extends Component {
 											name="profileImageUrl"
 											onChange={this.handleChange}
 											value={profileImageUrl}
-											type="profileImageUrl"
+											type="text"
 											/>
 									</div>
 								)

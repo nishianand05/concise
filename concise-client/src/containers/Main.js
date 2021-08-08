@@ -4,10 +4,13 @@ import {connect} from "react-redux";
 
 import Homepage from "../components/Homepage";
 import AuthForm from "../components/AuthForm";
+
 import {authUser} from "../store/actions/auth";
 import {removeError} from "../store/actions/errors";
 
+import withAuth from "../hocs/withAuth";
 
+import MessageForm from "../containers/MessageForm";
 
 const Main = props => {
 	
@@ -33,7 +36,8 @@ const Main = props => {
 								removeError={removeError}
 								onAuth={authUser}
 								buttonText="Log in" 
-								heading="Welcome back!" {...props}/>
+								heading="Welcome back!" 
+								{...props}/>
 						);
 					}}
 				/>
@@ -48,11 +52,17 @@ const Main = props => {
 								onAuth={authUser}
 								signUp
 								buttonText="Sign up" 
-								heading="Join Concise today" {...props}/>
+								heading="Join Concise today"
+										 {...props}
+								/>
 						);
 					}}
 				/>
 				
+				<Route
+					path="/users/:id/messages/new"
+					component={withAuth(MessageForm)}
+					/>
 			</Switch>
 		</div>
 	)

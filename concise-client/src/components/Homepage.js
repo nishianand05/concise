@@ -9,11 +9,12 @@ const Homepage = ({currentUser}) => {
 			<div>
 				<video playsInline autoPlay muted loop id="myHomeVideo">
 					<source src={homeVideo} type="video/mp4"/>
+					<source src={homeVideo} type="video/webm"/>
 				</video>
 				<div className="home-hero">	
 					<h1>What's Happening?</h1>
 					<h4>New to Concise?</h4>
-					<Link to="/signup" className="btn btn-primary">
+					<Link to="/signup" className="btn btn-info btn-lg">
 					Sign up here
 					</Link>
 				</div>

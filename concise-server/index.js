@@ -10,6 +10,7 @@ const authRoutes = require("./routes/auth");
 const messagesRoutes = require("./routes/messages");
 
 const {loginRequired, ensureCorrectUser} = require("./middleware/auth");
+const db = require("./models");
 
 app.use(cors());
 app.use(express.json());

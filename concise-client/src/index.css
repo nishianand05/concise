@@ -8,6 +8,7 @@ body {
 .navbar {
 	margin-bottom: 1rem;
 	color: #f5f3f4;
+	box-shadow: 0 0 20px 5px rgb(0 0 0 / 70%);
 }
 
 .navbar a {	
@@ -85,3 +86,20 @@ body {
 #messages:not(.no-hover) .list-group-item:hover{
 	background-color: #e6ecf0;
 }
+
+
+.timeline-image {
+	border-radius: 50px;
+	height: 48px;
+	width: 48px;
+	margin: 2px 30px 10px 10px;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+a.btn.btn-danger, a.btn.btn-danger:hover {
+	color: white;
+}
+

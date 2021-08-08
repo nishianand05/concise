@@ -7,6 +7,11 @@ export const loadMessages = messages => ({
 	messages
 });
 
+export const deleteMessage = id => ({
+	type: REMOVE_MESSAGE,
+	id
+});
+
 export const fetchMessages = () => {
 	return dispatch => {
 		return apiCall("get", '/api/messages')
@@ -14,7 +19,7 @@ export const fetchMessages = () => {
 			dispatch(loadMessages(res))
 		})
 		.catch(err => {
-			addError(err.message)
+			dispatch(addError(err.message))
 		});
 	};
 };
@@ -28,3 +33,16 @@ export const postNewMessage = text => (dispatch, getState) => {
 	})
 	.catch(err => dispatch(addError(err.message)));
 }
+
+export const removeMessage = (user_id, message_id) => {
+	return dispatch => {
+		return apiCall(
+			"delete", 
+			`/api/users/${user_id}/messages/${message_id}`)
+			.then(() => dispatch(deleteMessage(message_id)))
+			.catch(err => dispatch(addError(err.message)));
+	}
+}
+
+
+

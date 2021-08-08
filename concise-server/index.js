@@ -41,6 +41,6 @@ app.use(function(req, res, next){
 
 app.use(errorHandler);
 
-app.listen(process.env.PORT, function(){
+app.listen(process.env.PORT || 8080, function(){
 	console.log(`Server starting on port ${process.env.PORT}`);
 });

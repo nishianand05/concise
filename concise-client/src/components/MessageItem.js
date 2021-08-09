@@ -15,7 +15,7 @@ const MessageItem = ({date, profileImageUrl, text, username, removeMessage, isCo
 				className="timeline-image"
 				/>
 			
-			<div className="message-area">
+			<div className="message-area w-100">
 				<Link to='/'>@{username}&nbsp;</Link>
 				<span className="text-muted">
 					<Moment 
@@ -29,7 +29,7 @@ const MessageItem = ({date, profileImageUrl, text, username, removeMessage, isCo
 				{ isCorrectUser && (
 					<a 
 						href
-						className="btn btn-danger" 
+						className="btn btn-danger float-right" 
 						onClick={removeMessage}>
 						Delete
 					</a>

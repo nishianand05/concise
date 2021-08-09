@@ -14,7 +14,7 @@ export const deleteMessage = id => ({
 
 export const fetchMessages = () => {
 	return dispatch => {
-		return apiCall("get", '/api/messages')
+		return apiCall("get", `${process.env.REACT_APP_SERVER_URL}/api/messages`)
 		.then(res => {
 			dispatch(loadMessages(res))
 		})
@@ -27,7 +27,7 @@ export const fetchMessages = () => {
 export const postNewMessage = text => (dispatch, getState) => {
 	let {currentUser} = getState();
 	const id = currentUser.user.id;
-	return apiCall("post", `/api/users/${id}/messages`, {text})
+	return apiCall("post", `${process.env.REACT_APP_SERVER_URL}/api/users/${id}/messages`, {text})
 	.then(res => {
 		
 	})
@@ -38,7 +38,7 @@ export const removeMessage = (user_id, message_id) => {
 	return dispatch => {
 		return apiCall(
 			"delete", 
-			`/api/users/${user_id}/messages/${message_id}`)
+			`${process.env.REACT_APP_SERVER_URL}/api/users/${user_id}/messages/${message_id}`)
 			.then(() => dispatch(deleteMessage(message_id)))
 			.catch(err => dispatch(addError(err.message)));
 	}
